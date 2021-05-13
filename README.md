@@ -1,5 +1,5 @@
 # VaccineNotifier
-VaccineNotifier checks the cowin portal periodically to find vaccination slots available in your pin code and for your age. If found, it will send you emails every minute until the slots are available.
+VaccineNotifier checks the cowin portal periodically to find vaccination slots available in your district and for your age. If found, it will send you emails every minute until the slots are available.
 
 
 <font size="6"> Steps to run the script: </font> 
@@ -9,8 +9,10 @@ https://support.google.com/accounts/answer/185833?p=InvalidSecondFactor&visit_id
 \
 Step 2) Enter the details in the file .env, present in the same folder
 \
+Step 3) Find your districtId and put it at same .env file. To know district Id visit cowin website, right click to open network inspector go to network tab then select your state and district and hit search at webiste. You will notice a network call like 
+https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict?district_id=395&date=13-05-2021, here 395 is your districtId.
 \
-Step 3) On your terminal run: npm i && pm2 start vaccineNotifier.js
+Step 4) On your terminal run: npm i && pm2 start vaccineNotifier.js
 \
 \
 To close the app run: pm2 stop vaccineNotifier.js && pm2 delete vaccineNotifier.js
